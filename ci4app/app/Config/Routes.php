@@ -31,6 +31,24 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 
+//Guest Book User
+$routes->get('/guest_book', 'GuestBook::user_show_all');
+
+
+$routes->get('/guest_book/user_create', 'GuestBook::user_create');
+$routes->post('/guest_book/user_save', 'GuestBook::user_save');
+
+$routes->get('/guest_book/user_delete/(:num)', 'GuestBook::user_delete/$1');
+$routes->get('/guest_book/user_edit/(:num)', 'GuestBook::user_edit/$1');
+$routes->post('/guest_book/user_update/(:num)', 'GuestBook::user_update/$1');
+
+$routes->get('/guest_book/gb_show_all', 'GuestBook::gb_show_all');
+$routes->get('/guest_book/gb_delete/(:num)', 'GuestBook::gb_delete/$1');
+$routes->get('/guest_book/gb_create', 'GuestBook::gb_create');
+$routes->get('/guest_book/gb_edit/(:num)', 'GuestBook::gb_edit/$1');
+$routes->post('/guest_book/gb_update/(:num)', 'GuestBook::gb_update/$1');
+$routes->post('/guest_book/gb_save', 'GuestBook::gb_save');
+
 $routes->get('/', 'Pages::index');
 $routes->get('/pages', 'Pages::index');
 $routes->get('/pages/about', 'Pages::about');

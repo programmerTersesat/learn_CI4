@@ -11,6 +11,7 @@ class Komik extends BaseController
     public function __construct()
     {
         $this->komikModel = new KomikModel();
+
     }
 
     public function index()
